@@ -12,6 +12,7 @@
 body{
     background-color: #262626;
     color: white;
+    font-family: 'PT Sans', sans-serif;
 }
 
 .main-nav{
@@ -127,6 +128,7 @@ Card Styles */
     margin: 2em 1em;
     display: grid;
     grid-template-columns: 33% 33% 33%;
+    grid-auto-rows: minmax(100px,auto);
     grid-column-gap: .4em;
     grid-row-gap: .7em;
 }
@@ -146,14 +148,18 @@ Card Styles */
 }
 
 .second-para{
-    padding-top: 2em;
+    padding-top: 1em;
+    margin-bottom: 1em;
+    padding:5px;
+    display: block;
+    /* position: absolute; */
+    bottom: 5px;
 }
 
 .movie-item {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
     transition: 0.3s;
-    height: 250px;
 }
   
   /* On mouse-over, add a deeper shadow */
