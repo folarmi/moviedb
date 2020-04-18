@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+  
+*:focus {
+    outline: none;
+}
+
+body{
+    background-color: #262626;
+    color: white;
+}
+
+.main-nav{
+    display: flex;
+    background-color:#3b393a;
+}
+
+/* Harmburger Styling */
+
+.harmburger {
+    display: inline-block;
+    cursor: pointer;
+}
+  
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 1px;
+    background-color: white;
+    margin: 1em 0 0.5em 10em;
+    transition: 0.4s;
+}
+  
+  /* Rotate first bar */
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+  
+  /* Fade out the second bar */
+  .change .bar2 {
+    opacity: 0;
+}
+  
+  /* Rotate last bar */
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+.main-nav h1{
+    margin: 1em 0 0.5em 1em;
+    color: #1db3ae;
+}
+
+#movie{
+    color: #1db3ae;
+}
+
+.banner{
+    background-image: url(./images/bloodshot2.jpg);
+    background-size: 100%;
+    background-size: cover;
+    height: 25em;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.banner-txt {
+    padding-top: 4em;
+    margin: 0 0 0.5em 1em;
+}
+
+.banner-para{
+    padding-left:2em;
+    font-size: 1.2em;
+}
+
+#big-deal{
+    padding-left: 3em;
+}
+
+.now-playing{
+    margin: 3em 1em;
+    background-color: #191919;
+    padding-left: 1em;
+}
+
+.now-playing img{
+    text-align: right;
+    padding-top: 4em;
+}
+
+.now-playing-text{
+margin-left: .3em;
+}
+
+.dash{
+    display: flex;
+    padding-top: 2em;
+}
+
+.short-dash{
+    width: 35px;
+    height: 2.5px;
+    background-color: white;
+    margin-top: 0.8em;
+}
+
+.sort{
+    margin-top: 2em;
+}
+
+#sort-by{
+    width: 90%;
+    height: 3em;
+    border-radius: 5px;
+    margin-top: 1em;
+    background-color: #1db3ae;
+    margin-bottom:5em ;
+}
+/* 
+Card Styles */
+.movie-gallery{
+    margin: 2em 1em;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-column-gap: .4em;
+    grid-row-gap: .7em;
+}
+
+/* .movie-item{
+    background-color:#262626 ;
+} */
+
+.movie-gallery img{
+    height: 150px;
+    width: 100%;
+}
+
+.movie-gallery p{
+    margin-left: 1em;
+    margin-top: .5em;
+}
+
+.second-para{
+    padding-top: 2em;
+}
+
+.movie-item {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
+    transition: 0.3s;
+    height: 250px;
+}
+  
+  /* On mouse-over, add a deeper shadow */
+.movie-item:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,20);
+}
+  
+  /* Add some padding inside the card container */
+/* .container {
+    padding: 2px 16px;
+} */
