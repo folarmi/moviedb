@@ -10,10 +10,6 @@ const allTitlesArray = Array.from(allTitles);
 const allYearsArray = Array.from(allYears);
 
 
-
-
-  
-  
 // Event Listeners
 allDivsArray.forEach(div => {
     div.addEventListener("click", showMovieDetails);
@@ -74,11 +70,3 @@ function showMovieDetails(event) {
 
 
 
-
-
-//Api for details and trailer
-// 
-
-
-// For plenty movies
-// https://api.themoviedb.org/3/search/movie?api_key=514318c6f6f673457a51ffcaf8158cf2&query=whiplash&language=en&append_to_response=videos,images 

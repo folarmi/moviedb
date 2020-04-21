@@ -59,7 +59,7 @@ function getMovieName() {
     const movieValue = searchMovie.value;
     movieValue.textContent = ""
   
-    window.location.href = "./searchResults.html?id=" + movieValue;   
+    window.location.href = "./searchResults.html?name=" + movieValue;   
 }
 
 
