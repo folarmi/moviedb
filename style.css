@@ -95,7 +95,6 @@ body{
 
 .now-playing img{
     text-align: right;
-    padding-top: 4em;
 }
 
 .now-playing-text{
@@ -124,8 +123,28 @@ margin-left: .3em;
     border-radius: 5px;
     margin-top: 1em;
     background-color: #1db3ae;
-    margin-bottom:5em ;
+    margin-bottom:2em ;
 }
+
+#search-movie{
+    margin-bottom: 3em;
+    margin-left: 1em;
+    border: none;
+    outline: none;
+    height: 3em;
+    width: 20em;
+    text-align: left;
+    letter-spacing: 0;
+    border: 1px solid rgb(29, 179, 174);
+    background: rgb(32, 32, 32);
+    color: #fff;
+    padding-left: 1em;
+}
+
+#search-button{
+    cursor: pointer;
+}
+
 /* 
 Card Styles */
 .movie-gallery{
@@ -175,8 +194,55 @@ Card Styles */
 .big-card{
     margin-left: .5em;
     margin-top: 3em;
+    box-shadow: 1px 3px 15px rgba(0,0,0,.5);
+    background-color: rgb(25, 25, 25);
+    width: 98%;
+    padding: 1em;
 }
+
 #movie-img{
-    width: 400px;
-    height: 400px;
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
+#movie-title{
+    color: #1db3ae;
+    margin-top: 2em;
+    font-size: 1.5em;
+}
+
+#release-date{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#website{
+    margin-top: 1em;
+}
+
+#overview{
+    margin-top: 1em;
+}
+
+button{
+    background: none;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 17px;
+    padding: 12px 18px;
+    border-radius: 30px;
+    outline: none;
+    margin-top: 10px;
+}
+
+#go-back{
+    border: 1px solid white;
+    color: white;
+    margin-right: 5em;
+}
+
+#similar{
+    border: 1px solid #1db3ae;
+    color: #1db3ae;
 }

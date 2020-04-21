@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie DB</title>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload>
+    <div class="main-wrapper">
+     
+        <nav>
+            <div class="main-nav">
+                <h1>Movies DB</h1>
+
+                <div class="harmburger" onclick="myFunction(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </nav>
+
+            <div class="wrapper">
+
+
+            <div class="now-playing">
+
+                <div class="dash">
+                    <div class="short-dash"></div>
+                    <h1 class="now-playing-text">Search Results for </h1>
+                </div>
+
+                
+                <h4 class="sort">Sort Results By</h4>
+                <select id="sort-by">
+                    <option value="">Rating Descending</option>
+                    <option value="">Rating Ascending</option>
+                    <option value="">Release Date Ascending</option>
+                    <option value="">Release Date Descending</option>
+                    <option value="">Title (A-Z)</option>
+                    <option value="">Title (Z-A)</option>
+                </select>
+
+
+                
+            <div class="search-div">
+                <input type="text" name="" id="search-movie" placeholder="Search for a movie..">
+                <span id="search-button"><img src="images/search.png" alt=""></span>
+            </div>
+            
+            </div>
+
+        </div>
+
+            </div>
+       <script src="app2.js"></script>
+    </body>
+</html>

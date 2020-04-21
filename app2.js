@@ -5,7 +5,16 @@ const movieOverview = document.getElementById('movie-overview');
 const genre = document.getElementById('genre');
 const rating = document.getElementById('rating');
 const website = document.getElementById('website');
+const searchButton = document.getElementById('search-button');
+const searchMovie = document.getElementById('search-movie');
 
+
+searchButton.addEventListener('click',getMovieName);
+document.addEventListener('keypress',function(event){
+    if (event.keyCode === 13){
+        getMovieName()
+    }
+})
 
 
 function loadMovieDetails(){
@@ -45,8 +54,13 @@ function loadMovieDetails(){
 }
 
 
-// https://api.themoviedb.org/3/movie/tt0082971/external_ids?api_key=514318c6f6f673457a51ffcaf8158 cf2
+function getMovieName() {
+    // Get Movie Name
+    const movieValue = searchMovie.value;
+    movieValue.textContent = ""
+  
+    window.location.href = "./searchResults.html?id=" + movieValue;   
+}
 
 
 
-// https://api.themoviedb.org/3/movie/tt0082971?api_key=514318c6f6f673457a51ffcaf8158cf2&language=en-US
