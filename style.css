@@ -15,6 +15,10 @@ body{
     font-family: 'PT Sans', sans-serif;
 }
 
+.main-wrapper{
+    overflow: hidden;
+}
+
 .main-nav{
     display: flex;
     background-color:#3b393a;
@@ -167,7 +171,12 @@ Card Styles */
     box-shadow: 0 8px 16px 0 rgba(0,0,0,20);
 }
   
-  /* Add some padding inside the card container */
-/* .container {
-    padding: 2px 16px;
-} */
+/* Movie Details Styles */
+.big-card{
+    margin-left: .5em;
+    margin-top: 3em;
+}
+#movie-img{
+    width: 400px;
+    height: 400px;
+}
