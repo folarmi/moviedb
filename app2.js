@@ -9,6 +9,9 @@ const searchButton = document.getElementById('search-button');
 const searchMovie = document.getElementById('search-movie');
 
 
+
+
+
 searchButton.addEventListener('click',getMovieName);
 document.addEventListener('keypress',function(event){
     if (event.keyCode === 13){
@@ -29,7 +32,6 @@ function loadMovieDetails(){
     fetch(api)
         .then((res) => res.json())
         .then((data) => {
-            console.log(data)
 
 
             //Get data from Api
@@ -59,8 +61,7 @@ function getMovieName() {
     const movieValue = searchMovie.value;
     movieValue.textContent = ""
   
-    window.location.href = "./searchResults.html?name=" + movieValue;   
+    window.location.href = "./searchResults.html?query=" + movieValue;   
 }
-
 
 
