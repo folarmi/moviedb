@@ -9,6 +9,17 @@ const allDivsArray = Array.from(allDivs);
 const allTitlesArray = Array.from(allTitles);
 const allYearsArray = Array.from(allYears);
 
+let pictureSize;
+// const height = screen.height;
+const width = screen.width;
+
+if (width <= 375){
+    pictureSize = "w185"
+} else if (width === 1024){
+    pictureSize = "w500"
+} 
+
+
 
 // Event Listeners
 allDivsArray.forEach(div => {
@@ -20,41 +31,44 @@ function loadImages(){
 
     
     fetch(api)
-        .then((res) => res.json())
-        .then((data) => {
-            let movies = data.results;
+      .then((res) => res.json())
+      .then((data) => {
+        let movies = data.results;
 
-            //Returns the movie links
-            const posterLinks = movies.map((movie) => {
-                return movie.poster_path;
-            })
+        let eachMovie = "";
+        movies.forEach(
+          ({
+            title,
+            original_name,
+            release_date,
+            first_air_date,
+            poster_path,
+            id,
+          }) => {
+            return (
+                eachMovie += ` 
+                            <div class = "movie-item">
+                            <img src="http://image.tmdb.org/t/p/${pictureSize}/${poster_path}" alt="" class="img-link" id="${id}"> 
+                            <div class= "container">
+                            <p class = "first-para">${title || original_name}</p>                                
+                            <p class = "second-para">${release_date || first_air_date}</p>                            
+                            </div>
+                            </div>`);
+          }
+        );
+  
+        let test = (document.querySelector(".movie-gallery").innerHTML = eachMovie);
+        let newDiv = document.querySelectorAll('.movie-item');
+        const newDynamicDivs = Array.from(newDiv)
 
-            
-            //Returns movie title
-            const movieTitles = movies.map((title) => {
-                return title.title || title.original_name;
-            })
 
-            //Returns Year of Release
-            const movieYear = movies.map((year) => {
-                return year.release_date || year.first_air_date;
-            })
-
-            // Returns movieIds
-            const movieIds = movies.map((movieId) => {
-                return movieId.id;
-            })
-
-
-            for(var i = 0; i < allImagesArray.length; i++){
-                allImagesArray[i].setAttribute("src", 'http://image.tmdb.org/t/p/w185/' + posterLinks[i]);
-                allImagesArray[i].setAttribute("id", movieIds[i]);
-                allTitlesArray[i].textContent =  movieTitles[i];
-                allYearsArray[i].textContent =  movieYear[i];
-            }
-        })
+        newDynamicDivs.forEach(newDivs => {
+            newDivs.addEventListener("click", showMovieDetails)
+        });
+    })
 }
 
+console.log(pictureSize);
 function showMovieDetails(event) {
     // Get Movie Id
     let divClicked = event.target.id;
@@ -63,10 +77,3 @@ function showMovieDetails(event) {
     const movieId = divClicked
     window.location.href = "./movieDetails.html?id=" + movieId;   
 }
-
-
-
-
-
-
-

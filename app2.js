@@ -6,18 +6,12 @@ const genre = document.getElementById('genre');
 const rating = document.getElementById('rating');
 const website = document.getElementById('website');
 const searchButton = document.getElementById('search-button');
-const searchMovie = document.getElementById('search-movie');
+const searchMovie = document.querySelectorAll('.search-movie');
+const searchMovieArray = Array.from(searchMovie);
 
 
+// searchButton.addEventListener('click',getMovieName);
 
-
-
-searchButton.addEventListener('click',getMovieName);
-document.addEventListener('keypress',function(event){
-    if (event.keyCode === 13){
-        getMovieName()
-    }
-})
 
 
 function loadMovieDetails(){
@@ -56,12 +50,14 @@ function loadMovieDetails(){
 }
 
 
-function getMovieName() {
-    // Get Movie Name
-    const movieValue = searchMovie.value;
-    movieValue.textContent = ""
+searchMovieArray.forEach(inputBox => {
+    inputBox.addEventListener("keydown", function(event){
+        if (event.keyCode === 13){
+            const movieValue = event.target.value;
+               movieValue.textContent = ""
   
-    window.location.href = "./searchResults.html?query=" + movieValue;   
-}
-
+               window.location.href = "./searchResults.html?query=" + movieValue;  
+        }
+    });
+});
 

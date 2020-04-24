@@ -40,7 +40,6 @@ function showAllMovies() {
         dynamicDivs.forEach(div => {
           div.addEventListener("click", showMovieDetails);
       });
-        console.log(div)
           
       });
 }

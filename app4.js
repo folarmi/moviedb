@@ -50,7 +50,6 @@ function similarMovies(){
         );
   
         const testy = document.querySelector(".movie-gallery").innerHTML = similarMovies;
-        console.log(testy)
         let div = document.querySelectorAll('.movie-item');
         const dynamicDivs = Array.from(div)
 
