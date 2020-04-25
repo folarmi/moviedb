@@ -3,6 +3,17 @@ function showAllMovies() {
     const urlParams = new URLSearchParams(queryString);
     const name = urlParams.get('query');
 
+
+let pictureSize;
+const width = screen.width;
+
+if (width <= 375){
+    pictureSize = "w185"
+} else if (width === 1024 || width > 1024){
+    pictureSize = "w500"
+} 
+
+
     var api = "https://api.themoviedb.org/3/search/movie?api_key=514318c6f6f673457a51ffcaf8158cf2&query" + "=" + name;
   
     fetch(api)
@@ -23,7 +34,7 @@ function showAllMovies() {
             return (
                 allMovie += ` 
                             <div class = "movie-item" onClick={showMovieDetails()}>
-                            <img src="http://image.tmdb.org/t/p/w185/${poster_path}" alt="" class="img-link" id="${id}"> 
+                            <img src="http://image.tmdb.org/t/p/${pictureSize}/${poster_path}" alt="" class="img-link" id="${id}"> 
                             <div class= "container">
                             <p class = "first-para">${title || original_name}</p>                                
                             <p class = "second-para">${release_date || first_air_date}</p>                            
