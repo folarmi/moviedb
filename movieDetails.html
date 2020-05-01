@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie DB</title>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/014a14165b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -13,7 +14,7 @@
         <div class="main-wrapper">
          
             <nav>
-                <div class="main-nav">
+                <div class="main-nav main-nav-details">
                     <h1>Movies DB</h1>
     
                     <div class="harmburger" onclick="myFunction(this)">
@@ -24,7 +25,6 @@
 
                 <div class="search-div">
                     <input type="text" name="name" class="search-movie" placeholder="Search for a movie..">
-                    <span id="search-button"><img src="images/search.png" alt=""></span>
                 </div>
     
                 </div>
@@ -38,30 +38,55 @@
             </div>
 
                 <div class="container">
-                    <p id="movie-title"></p>
+                    <h1 id="movie-title"></h1>
                     <p id="release-date"></p>
                     <p id="rating"></p>
 
-                    <p id="trailer"></p>
-    
 
+                        <div class="website">
+                            <a href="" id="website-link">Website</a>
+                            <button class="trailer-button">
+                                <i class="fas fa-play"></i>
+                                Play Trailer
+                            </button>
+                        </div>
+
+
+                        <div class="movie-trailer">
+                            <button class="close-button">
+                                <i class="far fa-window-close"></i>
+                            </button>
+                                <iframe width="400" height="315" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="i-frame"></iframe>
+                          </div>
+                   
+    
+                          
                     <h4 id="overview">Overview</h4>
                     <p id="movie-overview"></p>
-                    <button id="trailer"></button>
+                    <p id="genre"></p>
+                 
 
-
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
+                    <button type="submit" id="go-back">Go back</button>
+                    <button type="submit" id="similar">See Similar</button>
                 </div>
-
-                <button type="submit" id="go-back">Go back</button>
-            <button type="submit" id="similar">See Similar</button>
 
             </div>
 
+            <footer>
+                <div class="online">
+                    <h2>Find me online</h2>
+                    <ul>
+                        <li><a href="https://twitter.com/folacodes"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://github.com/folarmi"><i class="fab fa-github"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/folasayo-akinyosoye"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="https://web.facebook.com/folasayo.oluwaseyi"><i class="fab fa-facebook-square"></i></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                <h3> Made with <span class="heart">&#10084;</span> by Folacodes </h3>
+            </div>
+            </footer>
             
 
         </div>   

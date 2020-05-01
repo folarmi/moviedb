@@ -9,6 +9,20 @@ const allDivsArray = Array.from(allDivs);
 const allTitlesArray = Array.from(allTitles);
 const allYearsArray = Array.from(allYears);
 
+// Toggles Harmburger 
+function myFunction(x) {
+  x.classList.toggle("change");
+
+  // Toggles menu
+  var navBar = document.getElementById("nav-bar");
+  if (navBar.style.display === "block") {
+      navBar.style.display = "none";
+    } else {
+      navBar.style.display = "block";
+    }
+}
+
+
 let pictureSize;
 // const height = screen.height;
 const width = screen.width;

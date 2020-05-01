@@ -21,12 +21,27 @@ body{
 
 .main-nav{
     display: flex;
-    background-color:#3b393a;
+    background-color:#191919;
+    height: 5em;
 }
 
 .main-nav .search-div{
     display: none;
 }
+
+#nav-bar{
+    display: none;
+}
+
+#nav-bar a{
+    color: #ef7f9a;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+
 
 /* Harmburger Styling */
 
@@ -132,7 +147,7 @@ margin-left: .3em;
 
 .search-movie{
     margin-bottom: 3em;
-    margin-left: 1em;
+    margin-right: 4em;
     border: none;
     outline: none;
     height: 3em;
@@ -146,6 +161,38 @@ margin-left: .3em;
 }
 
 #search-button{
+    cursor: pointer;
+}
+
+/* trailer styles */
+.movie-trailer{
+    display: none;
+}
+
+.showing{
+    display: block;
+}
+
+.trailer-button, .close-button{
+    border: none;
+}
+
+.close-button{
+    width: 50px;
+    height: 50px;
+    /* right: 10px;
+    top: 10px; */
+    font-size: 30px;
+    border: none;
+    color: #fff;
+    outline: none;
+    margin-left: 10em;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
     cursor: pointer;
 }
 
@@ -229,6 +276,10 @@ Card Styles */
     margin-top: 1em;
 }
 
+#movie-overview{
+    line-height: 2;
+}
+
 button{
     background: none;
     border: 1px solid #fff;
@@ -251,6 +302,29 @@ button{
     color: #1db3ae;
 }
 
+footer{
+    background-color: #1db3ae;
+    padding: 2em;
+    text-align: center;
+}
+
+footer h2{
+    margin-bottom: 1em;
+}
+
+footer ul{
+    list-style-type:none ;
+}
+
+footer li{
+    display: inline-block;
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+
+.heart{
+    color: red;
+}
 
 /* Media Queries */
 @media (min-width:1024px) { /* big landscape tablets, laptops, and desktops */
@@ -335,7 +409,7 @@ button{
         height: 80%;
     }
 
-    .main-nav{
+    .main-nav-details{
         margin-bottom: 2em;
     }
 
@@ -352,10 +426,24 @@ button{
     .image-container img{
         width: 100%;
         margin-left: 5em;
-        height:100%;
     }
 
     .now-playing{
-        height: 30%;
+        height: 100%;
+    }
+
+    #movie-img{
+        margin-left: 0;
+        height: 100%;
+    }
+
+    .container{
+        padding: 30px;
+        justify-content: center;
+        align-items: start;
+    }
+
+    footer{
+        grid-column: 1/4;
     }
 }

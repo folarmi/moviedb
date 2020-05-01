@@ -4,13 +4,22 @@ const releaseDate = document.getElementById('release-date');
 const movieOverview = document.getElementById('movie-overview');
 const genre = document.getElementById('genre');
 const rating = document.getElementById('rating');
-const website = document.getElementById('website');
+const website = document.getElementById('website-link');
+const iFrame = document.querySelector('iframe');
 const searchButton = document.getElementById('search-button');
 const searchMovie = document.querySelectorAll('.search-movie');
 const searchMovieArray = Array.from(searchMovie);
+const trailerButton = document.querySelector('.trailer-button');
+const closeButton = document.querySelector('.close-button');
+const videoContainer = document.querySelector('.movie-trailer');
+const trailer = document.querySelector('video');
+
+
 
 
 // searchButton.addEventListener('click',getMovieName);
+
+
 
 
 
@@ -35,17 +44,22 @@ function loadMovieDetails(){
             let plots = data.overview;
             let Genre = data.genres;
             let web = data.homepage;
-            
-            
+            let trailer = data.videos.results[0].key;
+        
+            let allGenres = Genre.filter(genre => console.log(genre.name));
+            console.log(allGenres)
 
             //Put Elements into DOM
+            iFrame.setAttribute('src','https://www.youtube.com/embed/' + trailer);
             movieTitle.innerHTML = title;
-            releaseDate.innerHTML = yearReleased;
+            releaseDate.innerHTML = "Release date: " + yearReleased;
             movieOverview.innerHTML = plots
             movieImg.setAttribute('src','http://image.tmdb.org/t/p/w500/' + img);
             website.setAttribute('href', web)
-            genre.innerHTML = "Genre: " + Genre;
+            genre.innerHTML = "Genre: " + allGenres;
             plotTitle.innerHTML = "PLOT"
+            // const test = iFrame.setAttribute('src','https://www.youtube.com/embed/' + trailer);
+            // console.log(test)
         }) 
 }
 
@@ -61,3 +75,11 @@ searchMovieArray.forEach(inputBox => {
     });
 });
 
+//Play Trailer
+trailerButton.onclick = function() {
+    videoContainer.setAttribute('class','showing');
+}
+
+closeButton.onclick = function() {
+    videoContainer.setAttribute('class','movie-trailer');
+}
