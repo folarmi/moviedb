@@ -1,9 +1,12 @@
+const searchResult = document.getElementById('search-results');
+
 function showAllMovies() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const name = urlParams.get('query');
 
 
+    searchResult.innerHTML = 'Search results for ' + "'"+name+"'";
 let pictureSize;
 const width = screen.width;
 
@@ -44,6 +47,13 @@ if (width <= 375){
         );
   
         let test = (document.querySelector(".movie-gallery").innerHTML = allMovie);
+      
+        if (test === ''){
+          var h2 = document.createElement("h2");
+          document.querySelector(".movie-gallery").appendChild(h2);
+          document.querySelector('.movie-gallery h2').innerHTML= "There are no movies with that name,please check the spelling and try again"
+        }
+
         let div = document.querySelectorAll('.movie-item');
         const dynamicDivs = Array.from(div)
 

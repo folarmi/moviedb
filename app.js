@@ -82,7 +82,7 @@ function loadImages(){
     })
 }
 
-console.log(pictureSize);
+
 function showMovieDetails(event) {
     // Get Movie Id
     let divClicked = event.target.id;

@@ -1,6 +1,8 @@
 const similarButton = document.getElementById('similar');
 similarButton.addEventListener('click',getSimilarMovies)
 
+const tested = document.querySelector('no-movie')
+console.log(tested)
 
 
 
@@ -17,7 +19,6 @@ function similarMovies(){
     const newQueryString = window.location.search;
     const newurlParams = new URLSearchParams(newQueryString);
     const finalName = newurlParams.get('query');
-    console.log(finalName)
 
 
     var api = `https://api.themoviedb.org/3/movie/${finalName}/similar?api_key=514318c6f6f673457a51ffcaf8158cf2&language=en-US&page=1`;
@@ -26,7 +27,9 @@ function similarMovies(){
       .then((res) => res.json())
       .then((data) => {
         let movies = data.results;
-  
+
+    
+          
         let similarMovies = "";
         movies.forEach(
           ({
@@ -48,15 +51,28 @@ function similarMovies(){
                             </div>`);
           }
         );
+
+    
   
         const testy = document.querySelector(".movie-gallery").innerHTML = similarMovies;
+  
+      
+
+        if (testy === ''){
+          var h2 = document.createElement("h2");
+          document.querySelector(".movie-gallery").appendChild(h2);
+          document.querySelector('.movie-gallery h2').innerHTML = "There are no similar movies"
+        }
+
         let div = document.querySelectorAll('.movie-item');
         const dynamicDivs = Array.from(div)
-
 
         dynamicDivs.forEach(div => {
           div.addEventListener("click", showMovieDetails);
       });
+
+
+  
           
       });
 }

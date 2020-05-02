@@ -46,8 +46,9 @@ function loadMovieDetails(){
             let web = data.homepage;
             let trailer = data.videos.results[0].key;
         
-            let allGenres = Genre.filter(genre => console.log(genre.name));
-            console.log(allGenres)
+            let allGenres = Genre.map(genre => genre.name);
+            let genreString = allGenres.toString();
+            
 
             //Put Elements into DOM
             iFrame.setAttribute('src','https://www.youtube.com/embed/' + trailer);
@@ -56,7 +57,7 @@ function loadMovieDetails(){
             movieOverview.innerHTML = plots
             movieImg.setAttribute('src','http://image.tmdb.org/t/p/w500/' + img);
             website.setAttribute('href', web)
-            genre.innerHTML = "Genre: " + allGenres;
+            genre.innerHTML = "Genre: " + genreString;
             plotTitle.innerHTML = "PLOT"
             // const test = iFrame.setAttribute('src','https://www.youtube.com/embed/' + trailer);
             // console.log(test)

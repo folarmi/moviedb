@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie DB</title>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/014a14165b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body onload = "showAllMovies()">
@@ -27,14 +28,12 @@
         </nav>
 
         <div class="large-screen">
-           
-
-
+        
             <div class="now-playing">
 
                 <div class="dash">
                     <div class="short-dash"></div>
-                    <h1 class="now-playing-text">Search Results for </h1>
+                    <h1 class="now-playing-text" id="search-results"></h1>
                 </div>
 
                 
@@ -51,16 +50,13 @@
 
                 
             <div class="search-div">
-                <input type="text" name="" class="search-movie" placeholder="Search for a movie..">
-                <span id="search-button"><img src="images/search.png" alt=""></span>
+                <input type="text" name="name" class="search-movie" placeholder="Search for a movie..">
             </div>
             
             </div>
 
-            <div class="all-movie-wrapper">
-                <div class="movie-gallery">
-
-                </div>
+            <div class="movie-gallery">
+                
             </div>
 
             <footer>
