@@ -31,7 +31,13 @@ body{
 
 #nav-bar{
     display: none;
-}
+    margin-top: 5em;
+    background-color: #191919;
+    position: absolute;
+    right: 0;
+    width: 15em;
+    box-shadow: 0 3px 6px rgba(18,18,18,.5);
+   }
 
 #nav-bar a{
     color: white;
@@ -39,6 +45,8 @@ body{
     text-decoration: none;
     font-size: 17px;
     display: block;
+    text-align: center;
+    font-size: 1.8em;
 }
 
 
@@ -50,23 +58,6 @@ body{
     cursor: pointer;
     
 }
-
-/* .change{
-    position: absolute;
-    background: #191919;
-    z-index: 5000;
-    right: 0;
-    padding: 30px;
-    border-radius: 0 0 20px 20px;
-    top: 80px;
-    transform: scale(0);
-    opacity: 0;
-    display: flex;
-    transform-origin: top right;
-    flex-direction: column;
-    transition-duration: 2000;
-    box-shadow: 0 3px 6px rgba(18,18,18,.5);
-} */
   
 .bar1, .bar2, .bar3 {
     width: 35px;
@@ -164,6 +155,8 @@ margin-left: .3em;
 }
 
 .search-movie{
+    margin-top: 1.5em;
+    margin-left: 1.7em;
     margin-bottom: 3em;
     margin-right: 4em;
     border: none;
@@ -196,6 +189,7 @@ margin-left: .3em;
 }
 
 .close-button{
+    position: absolute;
     width: 50px;
     height: 50px;
     /* right: 10px;
@@ -309,12 +303,6 @@ button{
     margin-top: 10px;
 }
 
-#go-back{
-    border: 1px solid white;
-    color: white;
-    margin-right: 5em;
-}
-
 #genre{
     margin-top: 1em;
     font-size: 1.4em;
@@ -325,6 +313,7 @@ button{
 #similar{
     border: 1px solid #1db3ae;
     color: #1db3ae;
+    margin-left: 5em;
 }
 
 .movie-gallery h2{
