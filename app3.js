@@ -17,7 +17,13 @@ if (width <= 375 || width >= 1023){
 } 
 
 
+   if (name === '') {
+     console.log('works')
+   }
+
+
     var api = "https://api.themoviedb.org/3/search/movie?api_key=514318c6f6f673457a51ffcaf8158cf2&query" + "=" + name;
+
   
     fetch(api)
       .then((res) => res.json())
