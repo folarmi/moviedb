@@ -26,8 +26,9 @@ function myFunction(x) {
 let pictureSize;
 // const height = screen.height;
 const width = screen.width;
+console.log(width)
 
-if (width <= 375){
+if ((width >= 375) && (width <= 1023)){
     pictureSize = "w185"
 } else if (width === 1024 || width > 1024){
     pictureSize = "w500"

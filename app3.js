@@ -7,15 +7,19 @@ function showAllMovies() {
 
 
     searchResult.innerHTML = 'Search results for ' + "'"+name+"'";
-let pictureSize;
-const width = screen.width;
+    
+    let pictureSize;
+    const width = screen.width;
 
-if (width <= 375){
-    pictureSize = "w185"
-} else if (width === 1024 || width > 1024){
-    pictureSize = "w500"
-} 
+    console.log(width);
 
+    if ((width >= 375) && (width <= 1023)){
+      pictureSize = "w185"
+    } else if (width === 1024 || width > 1024){
+      pictureSize = "w500"
+    } 
+
+  // 
 
    if (name === '') {
      console.log('works')
