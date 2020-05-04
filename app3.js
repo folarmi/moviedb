@@ -10,7 +10,7 @@ function showAllMovies() {
 let pictureSize;
 const width = screen.width;
 
-if (width <= 375 || width >= 1023){
+if (width <= 375){
     pictureSize = "w185"
 } else if (width === 1024 || width > 1024){
     pictureSize = "w500"
